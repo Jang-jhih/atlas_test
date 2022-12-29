@@ -1,12 +1,12 @@
 #
 
-Docker run -it -p 21000:21000 ubuntu /bin/bash
-
-
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 &&\
-export M2_HOME=/usr/local/apache-maven &&\
-export MAVEN_HOME=/usr/local/apache-maven &&\
-export PATH=${M2_HOME}/bin:${PATH} &&\
+# docker run -v $PWD:/code -w /code  -it ubuntu bash
+docker run -it -p 21000:21000 python:slim bash
+# export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 &&\
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-arm64
+# export M2_HOME=/usr/local/apache-maven &&\
+# export MAVEN_HOME=/usr/local/apache-maven &&\
+# export PATH=${M2_HOME}/bin:${PATH} &&\
 export MAVEN_OPTS="-Xms2g -Xmx2g"  &&\
 
 
