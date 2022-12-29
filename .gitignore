@@ -3,7 +3,7 @@ bin-debug/
 bin-release/
 [Oo]bj/
 [Bb]in/
-
+apache-atlas-sources-2.3.0
 # Other files and folders
 .settings/
 
@@ -12,6 +12,7 @@ bin-release/
 *.air
 *.ipa
 *.apk
+
 
 
 
