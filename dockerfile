@@ -19,8 +19,12 @@ apt install -y maven
 
 RUN cd apache-atlas-sources-2.3.0 &&\
 apt install -y npm &&\
-mvn clean -DskipTests -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true install
+mvn clean -DskipTests \
+-Dmaven.wagon.http.ssl.insecure=true \
+-Dmaven.wagon.http.ssl.allowall=true \
+-Dmaven.wagon.http.ssl.ignore.validity.dates=true  \
+package -Pdist
 
-ENV MANAGE_LOCAL_HBASE=true
-ENV MANAGE_LOCAL_SOLR=true
+# ENV MANAGE_LOCAL_HBASE=true
+# ENV MANAGE_LOCAL_SOLR=true
 # CMD [ "python3 atlas_start.py" ]
