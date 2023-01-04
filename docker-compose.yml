@@ -1,0 +1,44 @@
+version: "3.7"
+
+services:
+  atlas:
+    container_name: atlas
+    build: 
+      context: ./atlas
+    ports:
+      - 21000:21000
+    networks:
+      - my_bridge
+  
+  # mysql:
+  #   container_name: mysql
+  #   image: mysql
+  #   volumes:
+  #     - DB_data:/var/lib/mysql
+  #   environment: 
+  #     - MYSQL_ROOT_PASSWORD=aaaa
+  #   networks:
+  #     - my_bridge
+  #   ports:
+  #     - 3306:3306
+
+  # crawler:
+  #   container_name: crawler
+  #   build: 
+  #     context: ./crawler
+  #   env_file:
+  #     - .env
+  #   environment:
+  #     - localhost=${localhost}
+  #     - database=${database}
+  #     - user=${user}
+  #     - password=${password}    
+
+  #   networks:
+  #     - my_bridge
+
+volumes:
+  DB_data:
+
+networks:
+  my_bridge:
